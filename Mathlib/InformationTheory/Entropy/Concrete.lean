@@ -3,12 +3,16 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.Entropy.Uniqueness
-import Mathlib.Analysis.Convex.Jensen
-import Mathlib.Analysis.Convex.SpecificFunctions.Basic
-import Mathlib.Analysis.SpecialFunctions.BinaryEntropy
-import Mathlib.Algebra.Order.Ring.Basic
+public import Mathlib.InformationTheory.Entropy.Uniqueness
+public import Mathlib.Analysis.Convex.Jensen
+public import Mathlib.Analysis.Convex.SpecificFunctions.Basic
+public import Mathlib.Analysis.SpecialFunctions.BinaryEntropy
+public import Mathlib.Algebra.Order.Ring.Basic
+
+@[expose] public section
+
 
 /-!
 # Concrete Shannon Entropy — All 7 Rota Axioms Proven

@@ -3,9 +3,13 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.Complexity.CNF
-import Mathlib.Data.Nat.Prime.Infinite
+public import Mathlib.InformationTheory.Complexity.CNF
+public import Mathlib.Data.Nat.Prime.Infinite
+
+@[expose] public section
+
 
 /-!
 # Prime Encoding for CNF Literals and Clauses

@@ -3,14 +3,18 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.InformationTheory.Entropy.Axioms
-import Mathlib.Analysis.SpecialFunctions.Log.Base
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Data.Nat.Log
-import Mathlib.Algebra.Order.Floor.Defs
-import Mathlib.Tactic.Linarith
-import Mathlib.Algebra.Ring.Nat
+module
+public import Mathlib.InformationTheory.Entropy.Axioms
+public import Mathlib.Analysis.SpecialFunctions.Log.Base
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+public import Mathlib.Analysis.SpecificLimits.Basic
+public import Mathlib.Data.Nat.Log
+public import Mathlib.Algebra.Order.Floor.Defs
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Algebra.Ring.Nat
+
+@[expose] public section
+
 
 /-!
 # Rota's Entropy Theorem — Axiomatic Uniqueness Proof

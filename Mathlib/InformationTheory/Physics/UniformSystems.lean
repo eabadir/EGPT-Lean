@@ -3,12 +3,16 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.Data.Sym.Card
-import Mathlib.InformationTheory.EntropyNumber.Basic
-import Mathlib.InformationTheory.Entropy.Uniqueness
-import Mathlib.InformationTheory.Entropy.Shannon
-import Mathlib.InformationTheory.Physics.Common
+public import Mathlib.Data.Sym.Card
+public import Mathlib.InformationTheory.EntropyNumber.Basic
+public import Mathlib.InformationTheory.Entropy.Uniqueness
+public import Mathlib.InformationTheory.Entropy.Shannon
+public import Mathlib.InformationTheory.Physics.Common
+
+@[expose] public section
+
 
 /-!
 # Uniform Systems: State Spaces and Entropy

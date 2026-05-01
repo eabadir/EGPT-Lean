@@ -3,11 +3,15 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.Complexity.SetRFL
-import Mathlib.InformationTheory.Complexity.Decomposition
-import Mathlib.InformationTheory.Complexity.UTM
-import Mathlib.InformationTheory.Entropy.Concrete
+public import Mathlib.InformationTheory.Complexity.SetRFL
+public import Mathlib.InformationTheory.Complexity.Decomposition
+public import Mathlib.InformationTheory.Complexity.UTM
+public import Mathlib.InformationTheory.Entropy.Concrete
+
+@[expose] public section
+
 
 /-!
 # Constructive P = NP via Information Extraction
@@ -657,7 +661,10 @@ theorem walk_construction_iff_verifier_exists {k : ℕ}
       (walk_complexity_bound_c cnf _)
       (n_squared_bound_c cnf)
 
-#print axioms walk_construction_iff_verifier_exists
+-- `#print axioms walk_construction_iff_verifier_exists` is disabled here because
+-- `#print` commands are not permitted inside `module`-mode files. Run it from a
+-- non-module scratch file (or via `lean --print-axioms`) to verify the closure
+-- against `{propext, Classical.choice, Quot.sound}`.
 
 /-!
 ### Section 7: The Complexity Classes
@@ -795,9 +802,11 @@ theorem P_eq_NP_info : P = NP := by
       (walk_construction_iff_verifier_exists
         input_ccnf.val).symm
 
-#print axioms P_eq_NP_info
-#print axioms P
-#print axioms NP
+-- `#print axioms P_eq_NP_info`, `#print axioms P`, and `#print axioms NP` are
+-- disabled here because `#print` commands are not permitted inside
+-- `module`-mode files. Run them from a non-module scratch file (or via
+-- `lean --print-axioms`) to verify the closure of the P = NP proof chain
+-- against `{propext, Classical.choice, Quot.sound}`.
 
 /-!
 ### Section 10: Entropy IS Log — The Canonical Bridge

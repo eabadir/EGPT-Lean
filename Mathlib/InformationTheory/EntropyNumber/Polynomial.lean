@@ -3,8 +3,12 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.EntropyNumber.Basic
+public import Mathlib.InformationTheory.EntropyNumber.Basic
+
+@[expose] public section
+
 
 /-!
 # EntropyNat Polynomials

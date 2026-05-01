@@ -4,9 +4,13 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 **In memory of Gian-Carlo Rota, April 27, 1932 - April 18, 1999.**
 -/
-import Mathlib.InformationTheory.Entropy.Concrete
-import Mathlib.InformationTheory.Entropy.SourceCoding
-import Mathlib.InformationTheory.EntropyNumber.Hierarchy
+module
+public import Mathlib.InformationTheory.Entropy.Concrete
+public import Mathlib.InformationTheory.Entropy.SourceCoding
+public import Mathlib.InformationTheory.EntropyNumber.Hierarchy
+
+@[expose] public section
+
 
 open Real Finset
 

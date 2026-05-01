@@ -3,11 +3,15 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.Complexity.Tableau
-import Mathlib.InformationTheory.Complexity.UTM
-import Mathlib.InformationTheory.Complexity.Decomposition
-import Mathlib.InformationTheory.Entropy.Program
+public import Mathlib.InformationTheory.Complexity.Tableau
+public import Mathlib.InformationTheory.Complexity.UTM
+public import Mathlib.InformationTheory.Complexity.Decomposition
+public import Mathlib.InformationTheory.Entropy.Program
+
+@[expose] public section
+
 
 /-!
 # Information Theory Bridge

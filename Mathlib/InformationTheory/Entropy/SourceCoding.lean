@@ -3,9 +3,13 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.Entropy.Program
-import Mathlib.Analysis.SpecialFunctions.Log.Base
+public import Mathlib.InformationTheory.Entropy.Program
+public import Mathlib.Analysis.SpecialFunctions.Log.Base
+
+@[expose] public section
+
 
 /-!
 # Source Coding: Sources, Shannon Entropy, and the SCT/ISCT

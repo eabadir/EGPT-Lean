@@ -3,10 +3,14 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.Complexity.PPNP
-import Mathlib.InformationTheory.Complexity.CNF.Prime
-import Mathlib.InformationTheory.Complexity.CNF.Encoding
+public import Mathlib.InformationTheory.Complexity.PPNP
+public import Mathlib.InformationTheory.Complexity.CNF.Prime
+public import Mathlib.InformationTheory.Complexity.CNF.Encoding
+
+@[expose] public section
+
 
 /-!
 # Standard Complexity Theory Interface

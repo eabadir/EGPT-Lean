@@ -3,15 +3,19 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.Data.Sym.Card
-import Mathlib.Data.Fintype.BigOperators
-import Mathlib.InformationTheory.EntropyNumber.Basic
-import Mathlib.InformationTheory.Entropy.Shannon
-import Mathlib.InformationTheory.Entropy.Axioms
-import Mathlib.InformationTheory.Physics.Common
-import Mathlib.InformationTheory.Entropy.Uniqueness
-import Mathlib.InformationTheory.Physics.UniformSystems
+public import Mathlib.Data.Sym.Card
+public import Mathlib.Data.Fintype.BigOperators
+public import Mathlib.InformationTheory.EntropyNumber.Basic
+public import Mathlib.InformationTheory.Entropy.Shannon
+public import Mathlib.InformationTheory.Entropy.Axioms
+public import Mathlib.InformationTheory.Physics.Common
+public import Mathlib.InformationTheory.Entropy.Uniqueness
+public import Mathlib.InformationTheory.Physics.UniformSystems
+
+@[expose] public section
+
 
 /-!
 # Statistical Distributions: Bose--Einstein, Fermi--Dirac, and Maxwell--Boltzmann

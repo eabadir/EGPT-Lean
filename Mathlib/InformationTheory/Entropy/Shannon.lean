@@ -3,10 +3,14 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Data.NNReal.Basic
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Data.NNReal.Basic
+
+@[expose] public section
+
 
 /-!
 # Shannon Entropy on Finite Distributions

@@ -3,10 +3,14 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.InformationTheory.Complexity.CNF
-import Mathlib.Logic.Denumerable
-import Mathlib.Logic.Equiv.List
-import Mathlib.InformationTheory.EntropyNumber.Rat
+module
+public import Mathlib.InformationTheory.Complexity.CNF
+public import Mathlib.Logic.Denumerable
+public import Mathlib.Logic.Equiv.List
+public import Mathlib.InformationTheory.EntropyNumber.Rat
+
+@[expose] public section
+
 
 /-!
 # Encodable and Denumerable Instances for CNF Types
@@ -281,7 +285,7 @@ where
           | _ => none  -- Expected delimiter not found
 
 /-- Decode all clauses from the remaining tape, with fuel for termination. -/
-private def decodeClauses (k : ℕ) (fuel : ℕ) (tape : List Bool) :
+def decodeClauses (k : ℕ) (fuel : ℕ) (tape : List Bool) :
     Option (SyntacticCNF k) :=
   match fuel with
   | 0 => some []

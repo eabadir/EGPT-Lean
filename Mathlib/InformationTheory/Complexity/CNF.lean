@@ -3,11 +3,15 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.Data.Vector.Basic
-import Mathlib.Data.Fin.Basic
-import Mathlib.Logic.Encodable.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
+module
+public import Mathlib.Data.Vector.Basic
+public import Mathlib.Data.Fin.Basic
+public import Mathlib.Logic.Encodable.Basic
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
+
 
 /-!
 # CNF Constraint Syntax

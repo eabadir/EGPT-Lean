@@ -3,18 +3,22 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Data.Fin.Basic
-import Mathlib.Data.Fintype.Fin
-import Mathlib.Algebra.GroupWithZero.Units.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Multiset.Bind
-import Mathlib.Data.Multiset.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.InformationTheory.EntropyNumber.Basic
-import Mathlib.InformationTheory.Entropy.Shannon
-import Mathlib.InformationTheory.Entropy.Axioms
+module
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Data.Fin.Basic
+public import Mathlib.Data.Fintype.Fin
+public import Mathlib.Algebra.GroupWithZero.Units.Basic
+public import Mathlib.Data.Nat.Basic
+public import Mathlib.Data.Multiset.Bind
+public import Mathlib.Data.Multiset.Basic
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.InformationTheory.EntropyNumber.Basic
+public import Mathlib.InformationTheory.Entropy.Shannon
+public import Mathlib.InformationTheory.Entropy.Axioms
+
+@[expose] public section
+
 
 /-!
 # Physics: Common Definitions

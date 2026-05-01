@@ -3,10 +3,14 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.InformationTheory.EntropyNumber.Rat
-import Mathlib.Analysis.Real.Cardinality
-import Mathlib.SetTheory.Cardinal.Aleph
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+public import Mathlib.InformationTheory.EntropyNumber.Rat
+public import Mathlib.Analysis.Real.Cardinality
+public import Mathlib.SetTheory.Cardinal.Aleph
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
+
 
 /-!
 # EntropyReal: Information-Theoretic Reals

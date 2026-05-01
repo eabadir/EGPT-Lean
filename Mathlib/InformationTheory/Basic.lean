@@ -3,9 +3,13 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.Control.Random
-import Mathlib.Data.Fintype.Vector
+public import Mathlib.Control.Random
+public import Mathlib.Data.Fintype.Vector
+
+@[expose] public section
+
 
 /-!
 # InformationTheory.Basic: Shared Types

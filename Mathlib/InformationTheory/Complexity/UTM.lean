@@ -3,10 +3,14 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.InformationTheory.Complexity.Tableau
-import Mathlib.InformationTheory.Complexity.Decomposition
-import Mathlib.InformationTheory.Entropy.SourceCoding
+public import Mathlib.InformationTheory.Complexity.Tableau
+public import Mathlib.InformationTheory.Complexity.Decomposition
+public import Mathlib.InformationTheory.Entropy.SourceCoding
+
+@[expose] public section
+
 
 /-!
 # The Computation Model (Universal Turing Machine Layer)

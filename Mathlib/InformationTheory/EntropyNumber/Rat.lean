@@ -3,10 +3,14 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.InformationTheory.EntropyNumber.Int
-import Mathlib.Data.Rat.Defs
-import Mathlib.Data.Rat.Lemmas
-import Mathlib.Algebra.Order.Ring.Unbundled.Rat
+module
+public import Mathlib.InformationTheory.EntropyNumber.Int
+public import Mathlib.Data.Rat.Defs
+public import Mathlib.Data.Rat.Lemmas
+public import Mathlib.Algebra.Order.Ring.Unbundled.Rat
+
+@[expose] public section
+
 
 /-!
 # EntropyRat: Information-Theoretic Rationals

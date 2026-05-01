@@ -3,9 +3,13 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.InformationTheory.Bridge
-import Mathlib.InformationTheory.Complexity.Core
-import Mathlib.InformationTheory.EntropyNumber.Polynomial
+module
+public import Mathlib.InformationTheory.Bridge
+public import Mathlib.InformationTheory.Complexity.Core
+public import Mathlib.InformationTheory.EntropyNumber.Polynomial
+
+@[expose] public section
+
 
 /-!
 # P = NP via Verifier-Only Definitions

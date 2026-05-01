@@ -3,8 +3,12 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
-import Mathlib.InformationTheory.EntropyNumber.Basic
-import Mathlib.Logic.Equiv.Nat
+module
+public import Mathlib.InformationTheory.EntropyNumber.Basic
+public import Mathlib.Logic.Equiv.Nat
+
+@[expose] public section
+
 
 /-!
 # EntropyInt: Information-Theoretic Integers

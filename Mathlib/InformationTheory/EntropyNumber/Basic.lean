@@ -3,12 +3,16 @@ Copyright (c) 2026 Essam Abadir. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Essam Abadir
 -/
+module
 
-import Mathlib.Logic.Equiv.Defs
-import Mathlib.Logic.Equiv.Basic
-import Mathlib.Logic.Equiv.Nat
-import Mathlib.Data.Finset.Basic
-import Mathlib.InformationTheory.Basic
+public import Mathlib.Logic.Equiv.Defs
+public import Mathlib.Logic.Equiv.Basic
+public import Mathlib.Logic.Equiv.Nat
+public import Mathlib.Data.Finset.Basic
+public import Mathlib.InformationTheory.Basic
+
+@[expose] public section
+
 
 /-!
 # EntropyNat: Information-Theoretic Natural Numbers
