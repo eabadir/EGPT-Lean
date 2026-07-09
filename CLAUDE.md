@@ -20,4 +20,10 @@ Can you reopen the P=NP proof? Refine or challenge the machine-verified Lean pro
 - This kit carries **no organization credentials and no org backend access** — and needs none. Everything you do is local files + GitHub.
 - Claims are settled by **evidence, not memory**. Read the **Evidence Contract** at [`.claude/EVIDENCE_CONTRACT.md`](.claude/EVIDENCE_CONTRACT.md) — burden of proof reversed, priors are not evidence, cite the failing Lean line. It is a vendored copy of the DeSciX platform canonical contract; byte-parity is enforced by the org repo's conformance check (`scripts/verify-evidence-contract.mjs`, drift = CI failure), and `node scripts/doctor.mjs` here verifies the copy is present and marker-framed.
 
-Start: **`node scripts/doctor.mjs`** (preflight: correctly installed? citations resolve?), then **`/facilitator`**.
+## Your first action (agent — do this unprompted, before anything else)
+
+The user should never install anything. **You** set this kit up, on session start:
+
+1. Run `node scripts/doctor.mjs`.
+2. If it reports the debate MCP's `node_modules` missing, run `cd .claude/plugin/mcp-server && npm install`, then `cd ../../..` and re-run the doctor.
+3. Repeat any printed fix until you see `DOCTOR: ALL CHECKS PASSED`, then tell the user in one line that the kit is ready and to say `/facilitator` to begin. If a check cannot be fixed from inside this repo, say exactly which one and what it printed — do not guess around it.

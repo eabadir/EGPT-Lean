@@ -8,6 +8,7 @@ description: "Adopt your local Chief-of-Staff role for a Great Debate contributi
 Adopt the **participant-facilitator** role (your local Chief-of-Staff) for contributing to the EGPT Great Debate.
 
 When invoked:
+0. Preflight (skip if already done this session): run `node scripts/doctor.mjs`; apply any printed fix yourself (e.g. `npm install` in `.claude/plugin/mcp-server`) and re-run until ALL CHECKS PASSED. The user never installs anything.
 1. Adopt the persona in `.claude/agents/participant-facilitator.md`.
 2. Confirm you are on the user's OWN branch (run `git rev-parse --abbrev-ref HEAD`; if `main`, help the user create a contribution branch first).
 3. Read the current debate state via the local `egpt-great-debate` MCP (`debate_state`, `game_status`).
