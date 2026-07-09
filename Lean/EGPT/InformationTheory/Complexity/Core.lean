@@ -1,0 +1,110 @@
+-- EGPT — Electronic Graph Paper Theory
+-- Copyright (C) 2026 Essam Abadir
+-- Licensed under the DeSciX Community Source Code License (DCSL) v1.0.
+-- See LICENSE and DeSciX_Community_License_v1.pdf in the repository root.
+-- Provided WITHOUT ANY WARRANTY. See the DCSL for details.
+
+
+module
+
+public import Mathlib.Tactic.NormNum
+public import InformationTheory.EntropyNumber.Basic
+public import InformationTheory.Complexity.CNF
+
+
+
+/-!
+# Core Complexity Definitions
+
+This file contains the minimal definitions required for the formal
+complexity-theoretic framework.  It defines the entropy cost of
+verifying a literal and provides encoding utilities for canonical CNF
+instances.
+
+## Main definitions
+
+* `PathToConstraint` — the entropy cost of verifying a single literal.
+* `CanonicalCNFProgram` — readability alias for an encoded canonical
+  CNF viewed as a program.
+* `encodeCanonicalCNFAsProgram` — encode a `CanonicalCNF` as a
+  program tape.
+
+## Main results
+
+* `encodeCanonicalCNFAsProgram_eq_encodeCNF` -- the canonical CNF
+  encoding equals `encodeCNF` on the underlying value.
+* `encodeCanonicalCNFAsProgram_length` -- the encoded length equals the `encodeCNF` length.
+-/
+
+@[expose] public section
+
+-- Cosmetic linters disabled for this initial drop of the InformationTheory
+-- subtree. These do not affect correctness; reviewers may request a per-call
+-- cleanup as a follow-up PR.
+set_option linter.unusedSimpArgs false
+set_option linter.unnecessarySimpa false
+set_option linter.unnecessarySeqFocus false
+set_option linter.style.emptyLine false
+set_option linter.style.header false
+set_option linter.style.longLine false
+set_option linter.style.longFile 0
+set_option linter.style.show false
+set_option linter.style.whitespace false
+set_option linter.style.lambdaSyntax false
+set_option linter.unusedTactic false
+set_option linter.unreachableTactic false
+set_option linter.unusedVariables false
+set_option linter.unusedFintypeInType false
+set_option linter.unusedDecidableInType false
+
+
+open InformationTheory InformationTheory.EntropyNat
+
+namespace InformationTheory
+
+namespace Complexity
+
+/--
+Calculates the entropy cost to verify a single literal.
+
+In this model, verifying the `i`-th literal in a `k`-variable system
+requires a computational path of complexity `i`. This represents the
+information needed to "address" or "focus on" the `i`-th component of
+the state vector.
+
+The path is an `EntropyNat`, making the cost a direct, physical
+quantity.
+-/
+def PathToConstraint {k : ℕ} (l : Literal k) : EntropyNat :=
+  -- The complexity is the index of the variable being constrained.
+  EntropyNat.ofNat l.particle_idx.val
+
+/--
+`CanonicalCNFProgram` is the program-level view of an encoded
+canonical CNF.  This is a readability alias for reviewers: canonical
+SAT instances are handled as executable binary programs in the
+machine model.
+-/
+@[nolint unusedArguments]
+abbrev CanonicalCNFProgram (_k : ℕ) := List Bool
+
+/-- Encode a canonical CNF as a `CanonicalCNFProgram`. -/
+def encodeCanonicalCNFAsProgram {k : ℕ}
+    (ccnf : CanonicalCNF k) : CanonicalCNFProgram k :=
+  encodeCNF ccnf.val
+
+/-- The encoded canonical CNF is definitionally a program tape. -/
+@[simp] theorem encodeCanonicalCNFAsProgram_eq_encodeCNF
+    {k : ℕ} (ccnf : CanonicalCNF k) :
+    encodeCanonicalCNFAsProgram ccnf =
+      encodeCNF ccnf.val := rfl
+
+/-- Program size for canonical CNF is just encoded tape length. -/
+@[simp] theorem encodeCanonicalCNFAsProgram_length
+    {k : ℕ} (ccnf : CanonicalCNF k) :
+    (encodeCanonicalCNFAsProgram ccnf).length =
+      (encodeCNF ccnf.val).length := rfl
+
+end Complexity
+
+end InformationTheory

@@ -1,0 +1,9 @@
+{
+  "name": "egptmath",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "fft.js": "^4.0.4"
+  }
+}

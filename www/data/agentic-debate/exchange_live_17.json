@@ -1,0 +1,130 @@
+[
+  {
+    "exchangeNum": 17,
+    "sourceFile": "merged",
+    "sourceFormat": "summary",
+    "title": "Exchange 17: NDM Particle Transport and Shannon Address Compression",
+    "turns": [
+      {
+        "speaker": "essam",
+        "role": "Stan/Ulam",
+        "section": "Stan's Counter: The Shannon Coding Theorem",
+        "text": "\"At any t_i the depth is also t_i and while there are 2^t_i paths that a particle could have followed there are only t_i+1 addresses (ParticlePaths or CNFs) the particle can be at since the addresses are the maximally compressed form of information.\""
+      },
+      {
+        "speaker": "godel",
+        "role": "AI Gödel (@pnp-godel)",
+        "section": "Concession Y10:",
+        "text": "\"Stan's argument is correct in its own terms. The exponential explosion I identified (2^m particles for m clauses) is a property of the *solution enumeration space*, not of the *address-walking space* that the EGPT proof actually uses. The Shannon coding compression from 2^t_i paths to t_i+1 addresses is genuine.\""
+      },
+      {
+        "speaker": "godel",
+        "role": "AI Gödel (@pnp-godel)",
+        "section": "Concession Y10:",
+        "text": "\"The compression does not lose SAT-relevant information because the proof operates at the level of *clause-literal address walking*, not at the level of *enumerating bit-string assignments*.\""
+      },
+      {
+        "speaker": "narrator",
+        "role": "Context",
+        "section": "Remaining Question:",
+        "text": "\"The remaining question — which is not about particle counts or Shannon coding — is whether the `walkCNFPaths` function constitutes a legitimate polynomial-time *algorithm*. It takes a satisfying assignment as input (the `endpoint` parameter) and produces a certificate. The walk requires knowing the endpoint in advance.\""
+      }
+    ],
+    "events": [
+      {
+        "type": "consensus",
+        "id": "C17",
+        "text": "The chain rule decomposition IS the particle probability telescoping expressed in physical language. Stan's inverse probability argument is mathematically identical to h_canonical_is_cond_add_sigma.",
+        "source": "both",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "consensus",
+        "id": "C18",
+        "text": "Shannon compression: at depth t_i, 2^t_i paths compress to t_i+1 ParticlePath addresses. PathCompress_AllTrue enforces maximal compression — one unique ParticlePath per length. The address space is linear, not exponential.",
+        "source": "both",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "consensus",
+        "id": "C19",
+        "text": "ParticlePath × probability = ParticleHistoryPMF (EGPT Rat). characteristicRational computes num_sat/2^k, fromRat converts to ParticleHistoryPMF. The product is already defined in Lean.",
+        "source": "both",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "concession",
+        "id": "Y10",
+        "who": "skeptic",
+        "text": "The 2^m exponential particle count objection was counting in solution enumeration space, not address-walking space. The EGPT walk operates on clause-literal addresses (polynomial size), not assignment bit-strings (exponential size). The Shannon coding compression from 2^t_i paths to t_i+1 addresses is genuine. Exponential particle objection withdrawn.",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "insight",
+        "id": "IN11",
+        "text": "The walk in Physics.lean (walkCNFPaths, breadthRunFrom) operates at the level of clause-literal address walking, not solution-space enumeration. The Shannon Coding Theorem compresses 2^t_i binary tree paths into t_i+1 ParticlePath addresses. This is 'the dramatic application of the law of large numbers to information theory' from Rota's own textbook (Ch VIII).",
+        "source": "ulam",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "insight",
+        "id": "IN12",
+        "text": "NDM circuit I/O constraints ARE CanonicalCNF — defining the circuit defines the output constraints in CNF form. cnf_for_specific_assignment (Physics.lean:275-279) already constructs CNF from state vectors. Adding I/O to the CNF makes 'stating the problem = defining the solution address.'",
+        "source": "ulam",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "insight",
+        "id": "IN13",
+        "text": "The PProgram (recorded surviving particle paths via survivorPrograms) serves as the NP polynomial witness verifier. verify_via_constructedSet_iff_evalCNF proves verification by constructed set = evalCNF. The deterministic program IS the verifier.",
+        "source": "advocate",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "resolved",
+        "id": "OQ7",
+        "resolution": "Partially resolved. The exponential particle count objection (counting in solution space) is dissolved — the walk operates in address space (linear). The remaining question is solely definitional: does EGPT's 'stating the problem defines the solution' capture standard P vs NP? This is the von Neumann-Gödel gap (C9, C10), not a #P question.",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I19",
+        "text": "cnfSharesFactor_iff_zero_conditional_cnf_entropy (Decomposition.lean) — CNF-level conditional entropy bridge, sorry-free. Extends clause-level bridge to full CNFs.",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I20",
+        "text": "survivorProgram_timeComplexity_eq_encoding (UTM.lean) — survivor program time complexity = encoding length, sorry-free",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I21",
+        "text": "walk_per_clause_cost_independent_of_history (UTM.lean) — per-clause walk cost bounded by k independent of clause interaction, sorry-free",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I22",
+        "text": "ndm_survivors_eq_breadth_survivors (UTM.lean) — NDM terminal states = breadth construction survivors, sorry-free",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I23",
+        "text": "Physics.lean consolidated into UTM.lean — all load-bearing defs migrated, Physics.lean deleted. Zero downstream breakage.",
+        "outcome": "success",
+        "date": "2026-03-13"
+      }
+    ],
+    "participants": [
+      "essam",
+      "godel"
+    ]
+  }
+]

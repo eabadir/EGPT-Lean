@@ -1,0 +1,4 @@
+{
+  "$comment": "Great Debate participant kit. Intentionally carries NO 'descix' MCP server and NO org hooks. The only MCP is the local, read-only egpt-great-debate server declared in ../.mcp.json. This kit has zero access to any org backend, BEAST, or unk-* knowledge base — by design (participant-plane isolation).",
+  "hooks": {}
+}

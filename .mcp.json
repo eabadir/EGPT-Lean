@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "egpt-great-debate": {
+      "type": "stdio",
+      "command": "node",
+      "args": [".claude/plugin/mcp-server/server.js"]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "egpt-debate-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for the EGPT Great Debate — serves debate state, proof chains, and interactive game UI",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0"
+  }
+}

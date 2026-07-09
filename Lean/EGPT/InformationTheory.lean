@@ -1,0 +1,36 @@
+-- Root module: imports all InformationTheory submodules
+import InformationTheory.Basic
+import InformationTheory.Bridge
+import InformationTheory.Complexity.CNF
+import InformationTheory.Complexity.CNF.Encoding
+import InformationTheory.Complexity.CNF.Prime
+import InformationTheory.Complexity.Core
+import InformationTheory.Complexity.Decomposition
+import InformationTheory.Complexity.PPNP
+import InformationTheory.Complexity.SetRFL
+import InformationTheory.Complexity.StandardComplexity
+import InformationTheory.Complexity.Tableau
+import InformationTheory.Complexity.UTM
+import InformationTheory.Isomorphisms
+import InformationTheory.Entropy.Axioms
+import InformationTheory.Entropy.Concrete
+import InformationTheory.Entropy.Program
+import InformationTheory.Entropy.Shannon
+import InformationTheory.Entropy.SourceCoding
+import InformationTheory.Entropy.Uniqueness
+import InformationTheory.EntropyNumber.RotaEntropy
+import InformationTheory.EntropyNumber.Basic
+import InformationTheory.EntropyNumber.ContinuumHypothesis
+import InformationTheory.EntropyNumber.Hierarchy
+import InformationTheory.EntropyNumber.Factorization
+import InformationTheory.EntropyNumber.Int
+import InformationTheory.EntropyNumber.LogarithmBijective
+import InformationTheory.EntropyNumber.Polynomial
+import InformationTheory.EntropyNumber.PrimeAtoms
+import InformationTheory.EntropyNumber.Rat
+import InformationTheory.EntropyNumber.Real
+import InformationTheory.Physics.Common
+import InformationTheory.Physics.PhysicsDist
+import InformationTheory.Physics.StatisticalDistributions
+import InformationTheory.Physics.UniformSystems
+

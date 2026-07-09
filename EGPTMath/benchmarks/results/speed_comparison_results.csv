@@ -1,0 +1,11 @@
+test_case,fft_size,implementation,forward_time_ms,inverse_time_ms,roundtrip_time_ms,throughput_per_sec,precision_preserved
+impulse,256,fat,3.914072,4.437432,8.351504,119.74,true
+impulse,256,fftjs,0.001430,0.001622,0.003053,327561.70,false
+step,256,fat,6.576949,23.408836,29.985785,33.35,true
+step,256,fftjs,0.001436,0.001632,0.003068,325912.31,false
+sinusoid,256,fat,72.954766,111.207377,184.162143,5.43,true
+sinusoid,256,fftjs,0.001480,0.001766,0.003246,308051.54,false
+random,256,fat,121.870853,155.314401,277.185255,3.61,true
+random,256,fftjs,0.001487,0.001792,0.003279,304955.22,false
+dc,256,fat,6.904981,6.857336,13.762317,72.66,true
+dc,256,fftjs,0.001435,0.001627,0.003063,326489.03,false

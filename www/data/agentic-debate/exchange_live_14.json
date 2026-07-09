@@ -1,0 +1,83 @@
+[
+  {
+    "exchangeNum": 14,
+    "sourceFile": "debate_log.jsonl",
+    "sourceFormat": "reconstructed",
+    "title": "Exchange 14: Bridging Lemmas (Implementation Sprint)",
+    "turns": [
+      {
+        "speaker": "essam",
+        "role": "Stan/Ulam",
+        "text": "Essam builds three bridging lemmas (I5–I7) connecting computeTableau? to the time-complexity chain:\n\n1. `computeTableau_none_iff_not_sat` (TableauFromCNF.lean:255-267) — computeTableau? returning none ↔ evalCNF = false\n2. `computeTableau_time_bounded` (TableauFromCNF.lean:277-306) — when computeTableau? returns some, tableau.complexity ≤ |cnf| × k\n3. `unsat_detected_by_prime_structure` (Decomposition.lean:416-428) — ¬ CNFSharesFactor cnf → ∀ v, computeTableau? cnf v = none\n\nAll sorry-free. lake build passes. Directs re-review."
+      },
+      {
+        "speaker": "godel",
+        "role": "AI Gödel (@pnp-godel)",
+        "text": "All three lemmas verified sorry-free. The bridging is genuine work:\n\n- Lemma 1 connects computeTableau? to Boolean evaluation\n- Lemma 2 connects it to the time-complexity bound\n- Lemma 3 connects it to the prime factorization layer (UNSAT detection)\n\n**C12 established:** computeTableau? handles both SAT and UNSAT.\n**C13 established:** All three bridging lemmas are sorry-free, connecting computeTableau? to both the time-complexity chain and the prime factorization layer.\n\nBut I refine the objection: computing H on conditional distributions requires knowing the conditional distribution. Knowing the conditional distribution after m clauses requires counting satisfying assignments of the first m clauses. This is #P-hard.\n\n**IN8:** The gap sharpens to computability of conditional distributions.\n\nThe sharpened question: can ¬ CNFSharesFactor cnf be decided in polynomial time via conditional entropy H(k|p)?"
+      },
+      {
+        "speaker": "moderator",
+        "role": "Moderator (@pnp-moderator)",
+        "section": "Commentary",
+        "text": "Implementation sprint exchange. Three sorry-free bridging lemmas built. Lemma 3 was easier than expected because evalCNF_true_iff_cnfSharesFactor already bridged the prime and evaluation layers — the connection was already implicit.\n\nMarkers: C12, C13, IN4, IN5, IN8. OQ1 resolved. OQ5 opened."
+      }
+    ],
+    "events": [
+      {
+        "type": "resolved",
+        "id": "OQ1",
+        "resolution": "All three lemmas proven sorry-free: computeTableau_none_iff_not_sat, computeTableau_time_bounded, unsat_detected_by_prime_structure. computeTableau? is now connected to both the time-complexity chain and the prime factorization layer. lake build passes.",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I5",
+        "text": "computeTableau_none_iff_not_sat (TableauFromCNF.lean:255-267) — computeTableau? returning none ↔ evalCNF = false",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I6",
+        "text": "computeTableau_time_bounded (TableauFromCNF.lean:277-306) — when computeTableau? returns some, tableau.complexity ≤ |cnf| × k",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I7",
+        "text": "unsat_detected_by_prime_structure (Decomposition.lean:416-428) — ¬ CNFSharesFactor cnf → ∀ v, computeTableau? cnf v = none",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "consensus",
+        "id": "C13",
+        "text": "computeTableau? is now formally connected to both the time-complexity chain (via walkComplexity_upper_bound) and the prime factorization layer (via unsat_detected_by_prime_structure). All three bridging lemmas are sorry-free.",
+        "source": "both",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "insight",
+        "id": "IN4",
+        "text": "Lemma 3 (unsat_detected_by_prime_structure) was easier than expected because evalCNF_true_iff_cnfSharesFactor already bridged the prime and evaluation layers. The connection was already implicit — the lemma just composed it with computeTableau_none_iff_not_sat.",
+        "source": "moderator",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "insight",
+        "id": "IN5",
+        "text": "The sharpened question is now: can ¬ CNFSharesFactor cnf be decided in polynomial time? The Advocate's angle: conditional entropy H(k|p) — by prime atoms and LFTA, this is the bijective analog of GCD in normal space. GCD is polynomial (Euclidean algorithm), so the prime-structure consistency check may inherit this.",
+        "source": "advocate",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "open_question",
+        "id": "OQ5",
+        "text": "Can ¬ CNFSharesFactor cnf be decided in polynomial time via conditional entropy H(k|p)? By prime atoms and LFTA, H(k|p) is the bijective analog of GCD in normal space. Since GCD is polynomial (Euclidean algorithm), can the prime-structure consistency check inherit polynomial decidability?",
+        "priority": "primary",
+        "date": "2026-03-13"
+      }
+    ]
+  }
+]

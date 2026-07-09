@@ -1,0 +1,35 @@
+[
+  {
+    "exchangeNum": 0,
+    "sourceFile": "migrated_from_debate_log",
+    "sourceFormat": "events_only",
+    "title": "Exchange 0 Events",
+    "turns": [],
+    "events": [
+      {
+        "type": "failed_approach",
+        "id": "F1",
+        "text": "deterministicBreadthRun — cost model doesn't account for 2^k filtering.",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "failed_approach",
+        "id": "F2",
+        "text": "universalSolutionProgram — blank tape with no meaningful content.",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "failed_approach",
+        "id": "F3",
+        "text": "decomposeCNF first-literal extraction — fails on many satisfiable CNFs.",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "failed_approach",
+        "id": "F4",
+        "text": "P_info with semantic nonemptiness — characterizes SAT, not P.",
+        "date": "2026-03-13"
+      }
+    ]
+  }
+]

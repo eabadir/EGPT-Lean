@@ -1,0 +1,55 @@
+{
+  "title": "EGPTMath — Integer-Only Mathematics",
+  "module": "Module 2: The Integer Math Library",
+  "description": "The practical answer to scalable AI. An integer-only math library that replaces floating-point operations (FLOPs) with integer operations (IOPs) — exact arithmetic with no error accumulation. Includes the PPF number representation, vector algebra, polynomial operations, and the pedagogical Faster Abadir Transform (integer-only FFT/QFT).",
+  "ideas": ["ID1", "ID2", "ID5"],
+  "primary_ideas": ["ID2"],
+  "do_this_first": {
+    "ai-ml-engineer":     { "action": "Run the test suite: npm test",                    "file": "test/EGPTTestSuite.js" },
+    "cs-student":         { "action": "Verify the PPF bijection",                        "file": "test/verify_ppf_bijection.js" },
+    "hardware-engineer":  { "action": "Read the FAT overview",                           "file": "FAT/FAT_README.md" },
+    "qc-enthusiast":      { "action": "Run the QFT benchmark on Colab",                  "file": null }
+  },
+  "highlights": [
+    { "file": "EGPTMath.js",               "label": "Integer-only vector algebra engine (~6800 lines)",  "idea": "ID2" },
+    { "file": "EGPTNumber.js",             "label": "PPF number representation — lossless Shannon coding", "idea": "ID1" },
+    { "file": "FAT/EGPTFAT.js",            "label": "Pedagogical FAT — integer-only FFT/QFT",            "idea": "ID2" },
+    { "file": "test/EGPTTestSuite.js",     "label": "Full test suite (157 tests)",                       "idea": "ID2" },
+    { "file": "EGPTMath_Developer_Guide.md","label": "How unlimited precision works in information space","idea": "ID5" }
+  ],
+  "subsections": [
+    {
+      "title": "Core Library",
+      "files": [
+        "EGPTMath.js",
+        "EGPTNumber.js",
+        "EGPTComplex.js",
+        "EGPTPolynomial.js",
+        "EGPTranscendental.js"
+      ]
+    },
+    {
+      "title": "Faster Abadir Transform (Pedagogical Variants)",
+      "files": [
+        "FAT/EGPTFAT.js",
+        "FAT/EGPTFAT_PurePPF.js",
+        "FAT/EGPTFAT_TypeSafe.js",
+        "FAT/FAT_README.md"
+      ]
+    },
+    {
+      "title": "Tests & Validation",
+      "files": [
+        "test/EGPTTestSuite.js",
+        "test/verify_ppf_bijection.js",
+        "test/EGPTPolynomialTest.js",
+        "test/EGPTTopologyTestSuite.js"
+      ]
+    }
+  ],
+  "related_reading": [
+    { "label": "Developer Guide",             "file": "EGPTMath_Developer_Guide.md" },
+    { "label": "FAT Overview",                "file": "FAT/FAT_README.md" },
+    { "label": "IDEAS.md (ID2 — IOPs)",       "file": "../IDEAS.md" }
+  ]
+}

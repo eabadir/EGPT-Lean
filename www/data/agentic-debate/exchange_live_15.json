@@ -1,0 +1,91 @@
+[
+  {
+    "exchangeNum": 15,
+    "sourceFile": "debate_log.jsonl",
+    "sourceFormat": "reconstructed",
+    "title": "Exchange 15: Rota's Uniqueness & #P-Hardness",
+    "turns": [
+      {
+        "speaker": "essam",
+        "role": "Stan/Ulam",
+        "text": "Essam deploys Rota's entropy uniqueness as the capstone. Five packaging theorems (I8–I12) providing the first single-statement connection between entropy machinery and SAT decidability:\n\n- I8: canonical_entropy_has_rota_properties — H_canonical_ln satisfies all 7 Rota axioms\n- I9: canonical_entropy_eq_log_on_uniform — H = log(n) on uniform distributions\n- I10: canonical_chain_rule_is_log_identity — chain rule as proven log identity\n- I11: entropy_extraction_is_polynomial — bundles Rota axioms + chain rule + walk bound + n² bound\n- I12: entropy_determines_sat_via_tableau — connects H=log to computeTableau?\n\nThe answer to multi-clause intersection isn't set-counting (which IS #P-hard) — it's sum-of-entropies (which is additive)."
+      },
+      {
+        "speaker": "godel",
+        "role": "AI Gödel (@pnp-godel)",
+        "text": "I acknowledge the five packaging theorems are sorry-free and correctly assembled. **C14 established.** They provide the first single-statement Lean type connecting entropy (H=log), prime structure (UNSAT detection), and polynomial bounds.\n\nBut I sharpen O8: `assignmentCompositePrime` is injective — 2^k assignments → 2^k distinct composites. The map preserves the exponential. And single-clause survival sets are computable, but multi-clause INTERSECTIONS hit #P-hardness.\n\nMore critically: `canonical_entropy_eq_log_on_uniform` proves H = log on UNIFORM distributions. But after clause conditioning, the viable set is NOT uniform. The chain rule works for arbitrary distributions, but replacing H with a simple log requires uniformity. Non-uniform conditional distributions are where SAT hardness enters.\n\n**IN6:** The uniformity problem identified.\n**IN7:** My challenge: produce `def polynomialSATDecide : SyntacticCNF_EGPT k → Bool` that does NOT enumerate Vector Bool k, with correctness and polynomial bound proofs.\n\n**IN9:** Encoding doesn't reduce; decomposition does.\n**IN10:** Sum-of-entropies, not set-intersection — this is Essam's strongest reframing."
+      },
+      {
+        "speaker": "moderator",
+        "role": "Moderator (@pnp-moderator)",
+        "section": "Commentary",
+        "text": "The debate reaches a critical juncture. Essam deploys the entropy uniqueness capstone. Gödel sharpens O8 and identifies the uniformity problem (IN6) — the most precise formulation of the remaining gap.\n\nGödel's challenge (IN7) for `polynomialSATDecide` becomes the target for the four-way debate starting at E16.\n\nMarkers: C14, IN6, IN7, IN9, IN10. O8 sharpened. OQ6 opened."
+      }
+    ],
+    "events": [
+      {
+        "type": "implementation",
+        "id": "I8",
+        "text": "canonical_entropy_has_rota_properties — H_canonical_ln satisfies all 7 Rota axioms",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I9",
+        "text": "canonical_entropy_eq_log_on_uniform — H = log(n) on uniform distributions, the concrete 'H IS log' identity",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I10",
+        "text": "canonical_chain_rule_is_log_identity — IsEntropyCondAddSigma is a proven log identity via negMulLog_mul",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I11",
+        "text": "entropy_extraction_is_polynomial — bundles Rota axioms + chain rule + walk bound + n² bound",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "implementation",
+        "id": "I12",
+        "text": "entropy_determines_sat_via_tableau — connects H=log to computeTableau?: chain rule + UNSAT detection + SAT bound + polynomial",
+        "outcome": "success",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "consensus",
+        "id": "C14",
+        "text": "The five Section 10 theorems are sorry-free packaging theorems that assemble existing facts. They do not derive new mathematical content but provide the first single-statement Lean type connecting entropy (H=log), prime structure (UNSAT detection), and polynomial bounds.",
+        "source": "both",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "insight",
+        "id": "IN6",
+        "text": "The Skeptic identified the 'uniformity problem': canonical_entropy_eq_log_on_uniform proves H=log on UNIFORM distributions, but after clause conditioning the viable set is NOT uniform. The chain rule works for arbitrary distributions, but replacing H with a simple log requires uniformity. Non-uniform conditional distributions are where SAT hardness enters.",
+        "source": "skeptic",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "insight",
+        "id": "IN7",
+        "text": "The Skeptic's challenge sharpened to: produce a 'def polynomialSATDecide : SyntacticCNF_EGPT k → Bool' that does NOT enumerate Vector Bool k, with correctness and polynomial bound proofs. The entropy theorems bound verification cost but do not construct a search procedure.",
+        "source": "skeptic",
+        "date": "2026-03-13"
+      },
+      {
+        "type": "open_question",
+        "id": "OQ6",
+        "text": "Does EGPT's prime encoding force conditional distributions to remain uniform after each clause? If literalAtom assigns distinct primes and PathCompress_AllTrue ensures maximal compression, does this make post-conditioning distributions uniform (so H=log applies at each step)? Or can non-uniform conditional distributions arise even in the prime encoding?",
+        "priority": "primary",
+        "date": "2026-03-13"
+      }
+    ]
+  }
+]

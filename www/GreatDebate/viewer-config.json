@@ -1,0 +1,101 @@
+{
+  "title": "The Great Debate: P = NP",
+  "subtitle": "A structured exchange modeled on the 1931 von Neumann-Godel correspondence",
+  "dataSource": "../data/concordance-data.js",
+
+  "phases": [
+    {"name": "Binary Phase", "range": [1, 15], "class": "binary", "description": "Stan vs AI Godel (1-on-1)"},
+    {"name": "Four-Way Phase", "range": [16, 34], "class": "four-way", "description": "Stan, Godel, von Neumann, Rota"}
+  ],
+
+  "significantExchanges": {
+    "1":  {"badge": "godel-scores", "label": "Godel Scores: \"Your proof is rfl\""},
+    "12": {"badge": "turning-point", "label": "THE TURNING POINT: The 1931 Parallel"},
+    "16": {"badge": "four-way-begins", "label": "Four-Way Begins"},
+    "20": {"badge": "breakthrough", "label": "THE BREAKTHROUGH: Three-Layer Equivalence"},
+    "21": {"badge": "star", "label": "GODEL'S CONCESSION"},
+    "33": {"badge": "star", "label": "Godel Drops the Qualifier"},
+    "34": {"badge": "trophy", "label": "P = NP Settled — Unanimous, No Qualification"},
+    "35": {"badge": "scroll", "label": "F9 Resolved — Finder = Verifier"}
+  },
+
+  "objections": [
+    {"id": "O1", "name": "Definitional tautology", "principle": "Set.ext + Iff.rfl", "raised": "E1-E3", "conceded": "E12", "theorem": "walk_construction_iff_bounded_certificate"},
+    {"id": "O2", "name": "Non-standard types", "principle": "Church-Turing", "raised": "E7", "conceded": "E21", "theorem": "equivParticlePathToNat; standard mathlib"},
+    {"id": "O3", "name": "Walk requires witness", "principle": "Cook 1971", "raised": "E2", "conceded": "E18", "theorem": "ndmAddressWalk, ndmCircuitEval"},
+    {"id": "O4", "name": "Search vs verification", "principle": "Turing 1936", "raised": "E10", "conceded": "E20", "theorem": "three_layer_equivalence"},
+    {"id": "O5", "name": "UNSAT requires 2^k", "principle": "Godel 2nd", "raised": "E11", "conceded": "E20", "theorem": "unsat_detected_by_prime_structure"},
+    {"id": "O6", "name": "Exponential particle count", "principle": "Shannon", "raised": "E17", "conceded": "E17", "theorem": "ParticlePath compression"},
+    {"id": "O7", "name": "Entropy bound uniform only", "principle": "Gibbs'", "raised": "E16", "conceded": "E16", "theorem": "canonical_entropy_bounded_by_log"},
+    {"id": "O8", "name": "Prime encoding preserves exp.", "principle": "Valiant #P", "raised": "E5", "conceded": "E20", "theorem": "LFTA decomposition"},
+    {"id": "O9", "name": "Rota axioms might not hold", "principle": "Hilbert", "raised": "E5", "conceded": "E5", "theorem": "canonical_entropy_has_rota_properties"},
+    {"id": "O10", "name": "Formalization tradition", "principle": "Cook-Levin", "raised": "E12", "conceded": "E21", "theorem": "All types standard mathlib"}
+  ],
+
+  "editorial": {
+    "1":  {"godelPrinciple": "Standard of extraordinary evidence — Deolalikar 2010, Blum 2017.", "historical": "Von Neumann: \"show me the machine.\" EDVAC (1945).", "traditional": "Dozens of claimed P=NP proofs. Check for sorry's, hidden axioms.", "egpt": "lake build — 0 sorry, 0 custom axioms. C1.", "crossRefs": [{"label": "P_eq_NP Theorem (Lean)", "href": "https://eabadir.github.io/EGPT/Lean/EGPT/InformationTheory/Complexity/PPNP.lean", "type": "proof"}, {"label": "Circuit SAT Demo", "href": "https://eabadir.github.io/EGPT/egpt_circuit_sat/index.html", "type": "demo"}, {"label": "EGPTMath Test Suite", "href": "https://eabadir.github.io/EGPT/www/EGPTTestRunner.html", "type": "demo"}]},
+    "2":  {"godelPrinciple": "Verification vs search. Cook 1971.", "historical": "vN 1931; Ulam Monte Carlo.", "traditional": "If walk requires endpoint, it's circular.", "egpt": "walkCNFPaths in Tableau.lean. C2. IN1, IN2."},
+    "3":  {"godelPrinciple": "Hilbert's formalization program.", "historical": "vN as Hilbert's student.", "traditional": "Does Lean formalization capture standard concepts?", "egpt": "P and NP distinct in PPNP.lean."},
+    "4":  {"godelPrinciple": "Cook-Levin (1971, 1973).", "historical": "vN iterative EDVAC refinement.", "traditional": "If P needs patching, may capture wrong concept.", "egpt": "F1: universalSolutionProgram replaced."},
+    "5":  {"godelPrinciple": "Shannon lower bound. Hilbert rigor.", "historical": "Rota MIT 18.313 manuscript.", "traditional": "Injective 2^k->2^k is reformulation.", "egpt": "C3, Y1. literalAtom in Decomposition.lean.", "crossRefs": [{"label": "Rota Entropy Explorer", "href": "https://eabadir.github.io/EGPT/www/RotaEntropy/RotaEntropyProperties.html", "type": "demo"}]},
+    "6":  {"godelPrinciple": "Church-Turing thesis.", "historical": "Ulam: \"the directions ARE the address.\"", "traditional": "Bijection doesn't preserve computational cost.", "egpt": "equivParticlePathToNat."},
+    "7":  {"godelPrinciple": "Cantor diagonal (1891). Godel incompleteness.", "historical": "Ulam via Rota: \"merely a diagonal method.\"", "traditional": "Diagonal valid within ZFC.", "egpt": "LFTA: log(composite) = sum v_p(n)*log(p)."},
+    "8":  {"godelPrinciple": "Kolmogorov complexity (1965).", "historical": "vN Computer & Brain (1957).", "traditional": "Weaker tool than argument requires = formal gap.", "egpt": "Y5,Y6,Y7. F2,F3."},
+    "9":  {"godelPrinciple": "Existential quantifier in constructive logic.", "historical": "Rota conditional additivity. Enigma.", "traditional": "Joint satisfaction requires global intersection.", "egpt": "evalCNF_true_iff_cnfSharesFactor. Y4."},
+    "10": {"godelPrinciple": "Turing 1936: reading/computing separation.", "historical": "Rota chain rule (Axiom 4).", "traditional": "Verification != search.", "egpt": "C6. conditionalLiteralEntropy in Decomposition.lean."},
+    "11": {"godelPrinciple": "Godel 2nd incompleteness. UNSAT barrier.", "historical": "Rota Axioms 5 & 7.", "traditional": "Must rule out all 2^k.", "egpt": "C7. IN3."},
+    "12": {"godelPrinciple": "Incompleteness applied to formalization itself.", "historical": "vN 1931: \"I absolutely disagree.\"", "traditional": "Internal consistency != standard concept.", "egpt": "C8,C9,C10,Y8. O1 CONCEDED.", "crossRefs": [{"label": "P=NP Paper", "href": "https://eabadir.github.io/EGPT/content/Papers/EGPT_PeqNP/PeqNP_QED.md", "type": "paper"}, {"label": "Why P Equals NP", "href": "https://eabadir.github.io/EGPT/Lean/EGPT/InformationTheory/Complexity/WHY_P_EQUALS_NP.md", "type": "paper"}]},
+    "13": {"godelPrinciple": "Kolmogorov measure-zero (1933).", "historical": "Rota Axiom 5. Enigma.", "traditional": "Detecting UNSAT is co-NP.", "egpt": "Y3. IN5,IN6,IN7."},
+    "14": {"godelPrinciple": "Valiant #P (1979).", "historical": "vN: build the bridge.", "traditional": "Computing H may require enumeration.", "egpt": "C12,C13. IN8."},
+    "15": {"godelPrinciple": "Valiant #P. Toda (1991).", "historical": "Rota uniqueness.", "traditional": "#P-hardness standard barrier.", "egpt": "C14. IN9,IN10."},
+    "16": {"godelPrinciple": "#P. Toda.", "historical": "vN RECT. Rota Axiom 6.", "traditional": "Computing terms may be #P-hard.", "egpt": "C15,C16. O7 CONCEDED."},
+    "17": {"godelPrinciple": "Path vs address space. Shannon 1948.", "historical": "Ulam Monte Carlo.", "traditional": "Doesn't reduce state space.", "egpt": "C17,C18,C19,Y10. O6 CONCEDED."},
+    "18": {"godelPrinciple": "Marginal vs joint.", "historical": "Ulam the Mens.", "traditional": "Marginal!=joint consistency.", "egpt": "C20,Y11. O3 CONCEDED. IN14."},
+    "19": {"godelPrinciple": "NP characterization (Fagin, Cook).", "historical": "Y12: restates, doesn't eliminate.", "traditional": "exists v : Vector Bool k remains.", "egpt": "C21,C22,Y12,IN15."},
+    "20": {"godelPrinciple": "Relativization barrier (1975).", "historical": "Rota sufficient statistic.", "traditional": "polynomialSATDecide without Vector Bool k.", "egpt": "C23,C24,C25,Y13. O4,O5,O8 CONCEDED. IN16,IN17,IN18.", "crossRefs": [{"label": "Three-Layer Equivalence (Lean)", "href": "https://eabadir.github.io/EGPT/Lean/EGPT/InformationTheory/Complexity/PPNP.lean", "type": "proof"}, {"label": "Circuit SAT Experiment", "href": "https://eabadir.github.io/EGPT/egpt_circuit_sat/index.html", "type": "demo"}, {"label": "Circuit SAT Whitepaper", "href": "https://eabadir.github.io/EGPT/egpt_circuit_sat/paper/egpt_circuit_sat_whitepaper.pdf", "type": "paper"}]},
+    "21": {"godelPrinciple": "Formalization tradition — preference, not math.", "historical": "Godel 1956 letter to dying vN.", "traditional": "Remaining question is philosophical.", "egpt": "C26,C27,Y14. O2,O10 CONCEDED. ALL CLOSED. IN19,IN20.", "crossRefs": [{"label": "P_eq_NP Theorem (Lean)", "href": "https://eabadir.github.io/EGPT/Lean/EGPT/InformationTheory/Complexity/PPNP.lean", "type": "proof"}, {"label": "SetRFL Chain 2 (Lean)", "href": "https://eabadir.github.io/EGPT/Lean/EGPT/InformationTheory/Complexity/SetRFL.lean", "type": "proof"}]},
+    "22": {"godelPrinciple": "Naming conventions in formal verification.", "historical": "Precision in mathematical communication.", "traditional": "Standard naming follows the definition structure.", "egpt": "C28. Rename to sat_walk_iff_bounded_tableau."},
+    "23": {"godelPrinciple": "Measure theory: empty domain vs zero-probability events.", "historical": "Rota's axiomatic precision.", "traditional": "UNSAT = no satisfying assignments = empty domain.", "egpt": "C29,C30,C31. Rename agreed."},
+    "24": {"godelPrinciple": "Implementation vs specification gap.", "historical": "Engineering discipline: build what you specified.", "traditional": "An algorithm specification without implementation is incomplete.", "egpt": "C32, IN21."},
+    "25": {"godelPrinciple": "Computational redundancy in encodings.", "historical": "Ulam: simplify by removing unnecessary steps.", "traditional": "Direct encoding avoids unnecessary intermediate representations.", "egpt": "C33,C34. primeIndexedAtom is the single noncomputability root."},
+    "26": {"godelPrinciple": "Conditional independence vs telescoping products.", "historical": "Rota's chain rule as telescoping sum.", "traditional": "Chain rule in probability is always telescoping.", "egpt": "IN23."},
+    "27": {"godelPrinciple": "Constructive proof via guided search.", "historical": "Ulam's Monte Carlo: the guide doesn't search, it walks.", "traditional": "A guided walk is still O(search) if the guide requires the answer.", "egpt": "I27: Walk.lean with 3 sorry. IN24. OQ10 opened."},
+    "28": {"godelPrinciple": "Greedy algorithms and local vs global optimality.", "historical": "Iterative engineering: test, fail, refine.", "traditional": "Greedy approaches to SAT are known to be incomplete.", "egpt": "C35,C36. F8,F9. IN25. OQ10 resolved. Walk.lean is engineering, not proof."},
+    "29": {"godelPrinciple": "Encoding hardness vs problem hardness.", "historical": "Turing's Enigma: exploit structure, don't enumerate.", "traditional": "SAT hardness as encoding artifact is a strong claim.", "egpt": "C37. IN26."},
+    "30": {"godelPrinciple": "Proof strategy: use what's already proven.", "historical": "Don't rebuild what exists.", "traditional": "Leveraging existing results is standard practice.", "egpt": "Strategy pivot to existing equiv chain."},
+    "31": {"godelPrinciple": "Completeness of existing proof chain.", "historical": "Ulam: the answer was already there.", "traditional": "Connecting existing results is valid mathematical practice.", "egpt": "I28: SATEquiv.lean sorry-free. IN27,IN28,IN29."},
+    "32": {"godelPrinciple": "Decidability via exhaustive verification.", "historical": "Engineering: close the specification gap.", "traditional": "Decidable SAT via NP verifier is standard (but exponential).", "egpt": "I30: VerifierDecidable.lean sorry-free. C38."},
+    "33": {"godelPrinciple": "When standard types + standard axioms + sorry-free = no basis for 'non-standard' label.", "historical": "95 years after 1931. The burden is reversed.", "traditional": "The skeptic must find the error, not the prover.", "egpt": "Y15,C39. IN30,IN31.", "crossRefs": [{"label": "FAT Benchmark (Colab)", "href": "https://colab.research.google.com/drive/1LQLCHDNp9kCFgJXIzlitaVxuYiHRATXm", "type": "demo"}, {"label": "EGPTMath Developer Guide", "href": "https://eabadir.github.io/EGPT/EGPTMath/EGPTMath_Developer_Guide.md", "type": "paper"}]},
+    "34": {"godelPrinciple": "Existence (proven) vs implementation (engineering). The proof mandates; the code instantiates.", "historical": "IVT guarantees a root. Newton's method failing does not invalidate IVT.", "traditional": "Walk.lean failing Test 7 does not invalidate P_eq_NP_info.", "egpt": "C40,C41,C42. Y16. OQ5 resolved, OQ11 reclassified. Primary open frontier empty. IN32,IN33,IN34. DEBATE CONCLUDED.", "crossRefs": [{"label": "P_eq_NP_info (Lean)", "href": "https://eabadir.github.io/EGPT/Lean/EGPT/InformationTheory/Complexity/PPNP.lean", "type": "proof"}, {"label": "Debate State (42 consensus)", "href": "https://eabadir.github.io/EGPT/18.313x/DEBATE_STATE.md", "type": "paper"}, {"label": "Skeptic's Guide", "href": "https://eabadir.github.io/EGPT/PeqNP_SKEPTICS_GUIDE.md", "type": "paper"}]},
+    "35": {"godelPrinciple": "Uniqueness theorem characterizes form, not roots.", "historical": "Unit propagation reads zero-entropy terms.", "traditional": "BCP + greedy is standard but completeness needs proof.", "egpt": "C43-C46. Y16. I34. F10-F12. IN37-IN42. OQ12 resolved.", "crossRefs": [{"label": "EGPTMath Test Suite (live)", "href": "https://eabadir.github.io/EGPT/www/EGPTTestRunner.html", "type": "demo"}, {"label": "FRAQTL WhitePaper", "href": "https://eabadir.github.io/EGPT/content/pyFRAQTL/FRAQTL_WhitePaper.md", "type": "paper"}]},
+    "37": {"godelPrinciple": "Greedy commitment + cascade = BCP. Completeness open.", "historical": "Six agents all regressed to DPLL despite explicit instructions.", "traditional": "BCP incomplete for general 3-SAT by standard theory.", "egpt": "Y17,C49. IN46-IN49. Fix JS to sorted-list merge."}
+  },
+
+  "summaryTables": {
+    "binaryPhase": [
+      ["E1","Evaluate on code","Extraordinary evidence","vN EDVAC"],
+      ["E2","Walk IS construction","Cook 1971","vN 1931; Ulam"],
+      ["E3","Formalized it","Hilbert's program","vN student"],
+      ["E4","Improvements","Cook-Levin","Iterative"],
+      ["E5","Primes + Rota","Shannon; Hilbert","Rota 18.313"],
+      ["E6","Address IS map","Church-Turing","Ulam directions"],
+      ["E7","Shannon/LFTA/Cantor","Cantor; Godel","Diagonal method"],
+      ["E8","Shannon>bijection","Kolmogorov","Brain"],
+      ["E9","Consistency local","Existential","Rota; Enigma"],
+      ["E10","Conditional entropy","Turing","Rota chain"],
+      ["E11","Zero invariance","Godel 2nd","Rota Ax.5,7"],
+      ["E12","1931 parallel","Incompleteness","\"I disagree\""],
+      ["E13","Zero-probability","Kolmogorov","Rota+Enigma"],
+      ["E14","Bridging lemmas","Valiant #P","Build bridge"],
+      ["E15","Rota uniqueness","#P; Toda","Fubini"]
+    ],
+    "fourWayPhase": [
+      ["E16","Frontier","Decomp!=algo","RECT","O7"],
+      ["E17","2^t->t+1","(absent)","Circuit","O6"],
+      ["E18","Endpoint","Marginal!=joint","Eliminated","Counterex"],
+      ["E19","Honest","NP","Two paths","Alphabet"],
+      ["E20","Experiments","Restated","Architecture","BREAKTHROUGH"],
+      ["E21","Cite line","CONCEDES","(support)","(support)"]
+    ]
+  }
+}
